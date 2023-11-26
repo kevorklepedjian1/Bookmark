@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Rubik", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+nav {
+  @apply flex justify-between flex-col opacity-0 absolute -z-50 lg:opacity-100 lg:relative lg:z-auto;
+}
+
+nav.open {
+  background-color: hsl(229, 31%, 21%, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 999;
+  padding: 32px;
+  opacity: 1;
+}
+
+nav ul li button {
+  color: #fff;
+  font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  @apply text-slate-800 font-bold;
+}
+
+p {
+  @apply text-slate-600;
+  line-height: 1.8;
+}
+
+button {
+  @apply text-slate-600;
+}
+
+.btn-blue {
+  background-color: hsl(231, 69%, 60%);
+}
+
+.btn-red {
+  background-color: #fa5757;
+}
+
+.bg {
+  position: absolute;
+  right: -32px;
+  bottom: 0;
+  height: 250px;
+  width: 100%;
+  background-color: hsl(231, 69%, 60%);
+  border-radius: 200px 0 0 200px;
+  z-index: -1;
+}
+
+.bg-left {
+  position: absolute;
+  left: -32px;
+  bottom: -50px;
+  height: 250px;
+  width: 100%;
+  background-color: hsl(231, 69%, 60%);
+  border-radius: 0 200px 200px 0;
+  z-index: -1;
+}
+
+.attribution {
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+}
+
+.attribution a {
+  color: hsl(228, 78%, 71%);
+  text-decoration: underline;
+  font-size: 14px;
+}
+
+@media (min-width: 1024px) {
+  * {
+    font-size: 18px;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  nav.open {
+    background-color: transparent;
+    position: relative;
+    z-index: auto;
+    padding: 0;
+  }
+
+  .bg,
+  .bg-left {
+    height: 300px;
+  }
+
+  .bg {
+    right: -40%;
+    width: 120%;
+  }
+
+  .bg-left {
+    left: -40%;
+    width: 120%;
+  }
+}
