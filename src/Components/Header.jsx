@@ -21,7 +21,7 @@ export default function Header() {
     <>
       <header className="flex items-center justify-between p-8 max-w-7xl mx-auto">
         <div>
-          <img src={Logo} alt="Bookmark" />
+          <img src={Logo} alt="Bookmark"  className={`lg:block ${isOpen ? "hidden" : "open"}`}/>
         </div>
 
         <nav className={`lg:block ${isOpen ? "open" : "hidden"}`}>
@@ -70,7 +70,7 @@ export default function Header() {
 const NavItem = ({ text }) => {
   return (
     <li className="border-t border-slate-400 py-4 lg:border-transparent lg:py-0">
-      <button className="uppercase lg:text-x text-black tracking-widest hover:text-red-400 ">
+      <button className="uppercase lg:text-x text-white lg:text-black tracking-widest hover:text-red-400 ">
         {text}
       </button>
     </li>
